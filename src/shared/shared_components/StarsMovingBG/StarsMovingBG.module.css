@@ -1,0 +1,128 @@
+.starBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+  background: rgb(19, 19, 19); /* Background color of the sky */
+  z-index: -1; /* Ensures it stays behind all other content */
+}
+
+.star {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 217, 0, 0.8);
+  opacity: 1;
+  animation: twinkle 10s infinite linear;
+}
+
+@keyframes twinkle {
+  0% {
+    transform: translateX(-100vw) translateY(0);
+    opacity: 0.8;
+    box-shadow: 0 0 16px rgba(238, 255, 0, 0.8);
+  }
+  20% {
+    opacity: 0.2;
+    box-shadow: 0 0 4px rgba(17, 0, 255, 0.8);
+  }
+  30% {
+    opacity: 0.6;
+    box-shadow: 0 0 12px rgba(255, 145, 0, 0.6);
+  }
+  40% {
+    opacity: 0.2;
+    box-shadow: 0 0 4px rgba(247, 159, 159, 0.8);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  60% {
+    opacity: 0.8;
+    box-shadow: 0 0 16px rgba(255, 0, 0, 0.8);
+  }
+  70% {
+    opacity: 0.2;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  }
+  80% {
+    opacity: 0.9;
+    box-shadow: 0 0 18px rgba(0, 110, 255, 0.9);
+  }
+  90% {
+    opacity: 0.5;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    transfrom: translateX(100vw) translateY(100vh);
+    opacity: 0.8;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Shooting star background container */
+.shootingStar {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(
+    rgb(255, 214, 99),
+    rgb(255, 187, 59)
+  ); /* Tail effect */
+  filter: drop-shadow(0, 0, 6px, rgb(255, 255, 255));
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgb(175, 239, 255); /* Glow effect */
+  animation: tailMove 3s ease-in-out infinite, falling 3s ease-in-out infinite;
+}
+
+.shootingStar::after,
+.shootingStar::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -5px;
+  width: 15px;
+  height: 5px;
+  border-radius: 50%;
+  transform: rotate(40deg);
+  background-color: rgb(255, 196, 0);
+  box-shadow: 0 0 10px rgba(255, 174, 0, 0.918); /* Glow effect */
+  filter: drop-shadow(0, 0, 6px, white);
+  transition: falling 3s ease-in-out infinite;
+}
+.shootingStar::before {
+  transform: rotate(-40deg);
+}
+
+/* Animation for shooting stars tailMove */
+@keyframes tailMove {
+  0% {
+    width: 0px;
+    opacity: 0.5; /* Appear gradually */
+  }
+  25% {
+    width: 100px;
+    opacity: 1; /* Appear gradually */
+  }
+  50% {
+    width: 100px;
+    opacity: 0.5; /* Appear gradually */
+  }
+  100% {
+    width: 0px;
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Animation for shooting stars tailMove */
+@keyframes falling {
+  0% {
+    transform: translateX(0) translateY(0) rotate(320deg);
+  }
+  100% {
+    transform: translateX(-600px) translateY(400px) rotate(320deg);
+  }
+}

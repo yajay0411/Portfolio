@@ -1,0 +1,147 @@
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.mainOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+}
+
+.helloSection {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left;
+  width: 500px;
+}
+
+.helloSectionOne {
+  position: relative;
+}
+
+.hieHand {
+  position: absolute;
+  top: -35px;
+  right: 180px;
+  font-size: 75px;
+  display: inline-block;
+  animation: waveHand 2s ease-in-out infinite;
+}
+
+.roleLine {
+  width: 500px;
+  font-size: 30px;
+  height: 40px; /* To maintain space for the typewriter effect */
+}
+
+.tagline {
+  font-size: 30px;
+  color: #57cc3a;
+  height: 40px; /* To maintain space for the typewriter effect */
+}
+
+.mainTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-width: 450px;
+}
+
+/* Animation for shooting stars tailMove */
+@keyframes waveHand {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(14deg);
+    transform: rotate(14deg);
+  }
+  20% {
+    -webkit-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+  }
+  30% {
+    -webkit-transform: rotate(14deg);
+    transform: rotate(14deg);
+  }
+  40% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/* Media query for smaller screens (tablets and phones) */
+@media (max-width: 768px) {
+  .heroSection {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  .hieHand {
+    font-size: 50px;
+    top: -30px;
+    right: 150px;
+  }
+
+  .mainOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .maintwo {
+    margin: auto;
+  }
+
+  .helloSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+    width: 350px;
+  }
+
+  .roleLine {
+    width: 350px;
+    font-size: 25px;
+    height: 40px; /* To maintain space for the typewriter effect */
+  }
+
+  .tagline {
+    font-size: 25px;
+    color: #57cc3a;
+    height: 40px; /* To maintain space for the typewriter effect */
+  }
+
+  .image {
+    max-width: 250px;
+  }
+}

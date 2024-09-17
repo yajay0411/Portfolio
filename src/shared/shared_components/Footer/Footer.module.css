@@ -1,0 +1,18 @@
+.footerWrapper {
+  background: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: auto;
+}
+
+/* Media query for smaller screens (tablets and phones) */
+@media (max-width: 768px) {
+  .footerWrapper {
+    font-size: 14px;
+    padding: 10px;
+    background: rgb(34, 34, 34);
+  }
+}

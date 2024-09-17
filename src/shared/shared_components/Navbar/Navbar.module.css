@@ -1,0 +1,100 @@
+/* Navbar.module.css */
+
+.navbarWrapper {
+  background-color: transparent; /* Semi-transparent blue */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: inherit;
+  height: auto;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbarWrapper > span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.navbarWrapper > span:hover {
+  color: #a722ff;
+  font-size: 25px;
+  text-shadow: 0 0 20px rgb(255, 255, 255); /* Add a glowing shadow */
+}
+
+.navbarMenuWrapper .menuItem {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: all 0.3s ease, transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbarMenuWrapper .menuItem::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #a722ff;
+  transition: width 0.5s ease;
+}
+
+.navbarMenuWrapper .menuItem.menuActive::before {
+  width: 100%; /* Expand underline on hover */
+}
+
+.navbarMenuWrapper .menuItem:hover {
+  color: #a722ff;
+  font-size: 20px;
+  text-shadow: 0 0 20px rgb(255, 234, 43);
+  transform: translateY(-2px);
+}
+
+.navbarMenuWrapper .menuActive {
+  color: #a722ff;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.navbarMenuIcon {
+  display: none;
+}
+
+/* Media query for smaller screens (tablets and phones) */
+@media (max-width: 768px) {
+  .navbarWrapper {
+    background-color: rgb(34, 34, 34); /* Semi-transparent blue */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: auto;
+  }
+
+  .navbarWrapper .navbarMenuIcon {
+    display: inline-block;
+  }
+
+  .navbarMenuWrapper {
+    display: none;
+  }
+
+  .menuOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
