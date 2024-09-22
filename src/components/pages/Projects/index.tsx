@@ -5,22 +5,24 @@ import { useState } from "react";
 
 const Projects = () => {
   setTitle("Projects");
-  const itemsPerPage = 6;
+  const itemsPerPage = 2;
   const [currentPage, setCurrentPage] = useState(1);
 
   const items = [
-    { id: 1, name: "Item 1", github: "#", demo: "#" },
-    { id: 2, name: "Item 2", github: "#", demo: "#" },
-    { id: 3, name: "Item 3", github: "#", demo: "#" },
-    { id: 4, name: "Item 4", github: "#", demo: "#" },
-    { id: 5, name: "Item 5", github: "#", demo: "#" },
-    { id: 6, name: "Item 6", github: "#", demo: "#" },
-    { id: 7, name: "Item 7", github: "#", demo: "#" },
-    { id: 8, name: "Item 8", github: "#", demo: "#" },
-    { id: 9, name: "Item 9", github: "#", demo: "#" },
-    { id: 10, name: "Item 10", github: "#", demo: "#" },
-    { id: 11, name: "Item 11", github: "#", demo: "#" },
-    { id: 12, name: "Item 12", github: "#", demo: "#" },
+    {
+      id: 1,
+      name: "Image Gallery",
+      image: "image_gallery",
+      github: "https://github.com/yajay0411/imagegallery",
+      demo: "https://imagegallery-inky.vercel.app/",
+    },
+    {
+      id: 2,
+      name: "Stack Overflow Clone",
+      image: "stackoverflow",
+      github: "https://github.com/yajay0411/stackoverflow-frontend",
+      demo: "https://stackoverflow-frontend-vert.vercel.app/",
+    },
   ];
 
   // Calculate start and end indices of the current page
@@ -51,19 +53,26 @@ const Projects = () => {
         <div className={css.heading}>My Recent Work</div>
         <div className={css.cardGrid}>
           {paginatedItems.map((item) => (
-            <ProjectCard key={item.name} {...item} />
+            <ProjectCard key={item.id} {...item} />
           ))}
         </div>
         {/* Pagination Controls */}
-        <div className="pagination-controls">
-          <button onClick={previousPage} disabled={currentPage === 1}>
+        <div className={css["pagination-controls"]}>
+          <button
+            onClick={previousPage}
+            disabled={items.length >= itemsPerPage && currentPage === 1}
+          >
             Previous
           </button>
           <span>
-            {" "}
-            Page {currentPage} of {totalPages}{" "}
+            Page {currentPage} of {totalPages}
           </span>
-          <button onClick={nextPage} disabled={currentPage === totalPages}>
+          <button
+            onClick={nextPage}
+            disabled={
+              items.length >= itemsPerPage && currentPage === totalPages
+            }
+          >
             Next
           </button>
         </div>
