@@ -3,6 +3,7 @@ import React from "react";
 import css from "./Projects.module.css";
 import image_gallery from "../../../assets/image_gallery.png";
 import stackoverflow from "../../../assets/stackoverflow.png";
+import hooBank from "../../../assets/hooBank.png";
 
 interface ProjectCardProps {
   id: number;
@@ -22,6 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const imageObj: any = {
     image_gallery,
     stackoverflow,
+    hooBank,
   };
 
   return (

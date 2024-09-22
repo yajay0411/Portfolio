@@ -23,6 +23,13 @@ const Projects = () => {
       github: "https://github.com/yajay0411/stackoverflow-frontend",
       demo: "https://stackoverflow-frontend-vert.vercel.app/",
     },
+    {
+      id: 3,
+      name: "HooBank",
+      image: "hooBank",
+      github: "https://github.com/yajay0411/hooBank.github.io",
+      demo: "https://hoo-bank-five-theta.vercel.app/",
+    },
   ];
 
   // Calculate start and end indices of the current page
