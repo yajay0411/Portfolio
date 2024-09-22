@@ -9,7 +9,7 @@
 .heading {
   font-size: 30px;
   font-weight: bold;
-  color: blueviolet;
+  color: #ff6b00;
 }
 
 .cardGrid {
@@ -21,7 +21,8 @@
 }
 
 .card {
-  background-color: #fff;
+  background: linear-gradient(135deg, #8200fc, #a54cf8);
+  color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -50,7 +51,7 @@
 }
 
 .cardLinks a {
-  color: #007bff;
+  color: #ff8800;
   text-decoration: none;
   font-weight: bold;
 }
