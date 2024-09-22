@@ -63,7 +63,11 @@ const StarsMovingBG: React.FC = () => {
     }
   };
 
-  return <div className={css.starBackground} ref={starContainerRef}></div>;
+  return (
+    <>
+      <div className={css.starBackground} ref={starContainerRef}></div>
+    </>
+  );
 };
 
 export default StarsMovingBG;

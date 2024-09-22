@@ -3,7 +3,7 @@ import { Footer, Navbar } from "../../shared/shared_components";
 
 const Layout = () => {
   return (
-    <>
+    <div className="layout">
       <nav>
         <Navbar />
       </nav>
@@ -13,7 +13,7 @@ const Layout = () => {
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };
 
