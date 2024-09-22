@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 import css from "./Home.module.css"; // Assume custom styles are in this file
 import downloadImage from "../../../assets/download.png";
@@ -8,7 +7,7 @@ import { setTitle } from "../../../shared/utils/SetTitle";
 const Home: React.FC = () => {
   setTitle("Home");
   return (
-    <Box className="pageContentWrapper">
+    <>
       <div className={css.heroSection}>
         <div className={css.mainOne}>
           {/* Name */}
@@ -41,7 +40,7 @@ const Home: React.FC = () => {
           <img className={css.image} src={downloadImage} alt="Ajay's Image" />
         </div>
       </div>
-    </Box>
+    </>
   );
 };
 

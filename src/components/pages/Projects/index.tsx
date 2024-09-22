@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import { setTitle } from "../../../shared/utils/SetTitle";
 import css from "./Projects.module.css";
 import ProjectCard from "./ProjectCard";
@@ -47,30 +46,28 @@ const Projects = () => {
   };
   return (
     <>
-      <Box className="pageContentWrapper">
-        <div className={css.pageContent}>
-          {/* Display paginated items */}
-          <div className={css.heading}>My Recent Work</div>
-          <div className={css.cardGrid}>
-            {paginatedItems.map((item) => (
-              <ProjectCard key={item.name} {...item} />
-            ))}
-          </div>
-          {/* Pagination Controls */}
-          <div className="pagination-controls">
-            <button onClick={previousPage} disabled={currentPage === 1}>
-              Previous
-            </button>
-            <span>
-              {" "}
-              Page {currentPage} of {totalPages}{" "}
-            </span>
-            <button onClick={nextPage} disabled={currentPage === totalPages}>
-              Next
-            </button>
-          </div>
+      <div className={css.pageContent}>
+        {/* Display paginated items */}
+        <div className={css.heading}>My Recent Work</div>
+        <div className={css.cardGrid}>
+          {paginatedItems.map((item) => (
+            <ProjectCard key={item.name} {...item} />
+          ))}
         </div>
-      </Box>
+        {/* Pagination Controls */}
+        <div className="pagination-controls">
+          <button onClick={previousPage} disabled={currentPage === 1}>
+            Previous
+          </button>
+          <span>
+            {" "}
+            Page {currentPage} of {totalPages}{" "}
+          </span>
+          <button onClick={nextPage} disabled={currentPage === totalPages}>
+            Next
+          </button>
+        </div>
+      </div>
     </>
   );
 };

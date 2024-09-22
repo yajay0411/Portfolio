@@ -1,0 +1,151 @@
+/* Experiecne Card Css */
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 10px 10px 0px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ff6600, #a94dff);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.company-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin: 16px 16px 16px 0px;
+}
+
+.experience-body pre {
+  font-size: 16px;
+}
+
+.tags {
+  width: 700px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 10px 10px 0px;
+}
+
+.tag {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 5px;
+  width: 120px;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00aeff, #403df7);
+  cursor: pointer;
+  animation: osscilateTags 2s ease-in-out infinite;
+}
+
+@keyframes osscilateTags {
+  0% {
+    opacity: 1;
+    transform: translateX(5px) rotate(1deg);
+  }
+  50% {
+    opacity: 0.8;
+
+    transform: translateX(5px) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(5px) rotate(1deg);
+  }
+}
+
+/* turncate text css */
+
+.toggle-btn {
+  background: white;
+  border-radius: 5px;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.toggle-btn:hover {
+  color: #80b8f5;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px 10px 10px 0px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ff6600, #a94dff);
+  }
+
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .company-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+  }
+
+  .experience-body pre {
+    font-size: 15px;
+    overflow-x: scroll;
+  }
+
+  .tags {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    height: auto;
+    gap: 5px;
+    padding: 10px 10px 10px 0px;
+  }
+
+  .tag {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 5px;
+    width: 120px;
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00aeff, #403df7);
+    cursor: pointer;
+    animation: osscilateTags 2s ease-in-out infinite;
+  }
+
+  .toggle-btn {
+    background: white;
+    border-radius: 5px;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 15px;
+  }
+
+  .toggle-btn:hover {
+    color: #80b8f5;
+  }
+}

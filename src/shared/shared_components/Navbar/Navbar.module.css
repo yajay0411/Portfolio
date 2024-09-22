@@ -8,8 +8,6 @@
   align-items: center;
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: inherit;
-  height: auto;
   z-index: 1000; /* Ensure it stays above other content */
 }
 

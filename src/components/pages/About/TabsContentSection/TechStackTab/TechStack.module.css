@@ -1,0 +1,37 @@
+.techstack-tags {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  width: inherit;
+  padding: 10px 10px 10px 0px;
+}
+
+.techstack-tag {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 30px 50px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6600, #a94dff);
+  cursor: pointer;
+  animation: osscilateTags 2s ease-in-out infinite;
+}
+
+@keyframes osscilateTags {
+  0% {
+    opacity: 1;
+    transform: rotate(1deg);
+  }
+  50% {
+    opacity: 0.8;
+
+    transform: rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(1deg);
+  }
+}
