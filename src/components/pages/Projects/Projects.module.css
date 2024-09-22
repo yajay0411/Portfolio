@@ -14,9 +14,9 @@
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
   width: 900px;
 }
 
@@ -24,27 +24,23 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   text-align: center;
   transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
+  overflow: hidden;
 }
 
 .cardImg {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 200px;
+  transition: all 1s ease-in-out;
+}
+
+.cardImg:hover {
+  transform: scale(1.05);
 }
 
 .cardContent {
   padding: 15px;
-}
-
-.cardContent h3 {
-  margin-bottom: 15px;
 }
 
 .cardLinks {
@@ -67,10 +63,48 @@
   margin-right: 5px;
 }
 
+.pagination-controls {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+.pagination-controls button {
+  padding: 10px;
+  width: 100px;
+  color: #fff;
+  font-size: 20px;
+  background: linear-gradient(135deg, #ff007b, #ff6b00);
+  border: none;
+  border-radius: 2px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background: linear-gradient(135deg, #fa84bd, #f0ab7a);
+  cursor: not-allowed;
+}
+
+.pagination-controls button:hover {
+  transform: scale(1.1);
+}
+
 /* Media query for smaller screens (tablets and phones) */
 @media (max-width: 768px) {
   .cardGrid {
     width: 600px;
+  }
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    width: unset;
   }
 }
 
@@ -78,6 +112,14 @@
 @media (max-width: 600px) {
   .cardGrid {
     width: 350px;
+  }
+
+  .pagination-controls {
+    font-size: 15px;
+  }
+
+  .pagination-controls button {
+    font-size: 15px;
   }
 }
 
