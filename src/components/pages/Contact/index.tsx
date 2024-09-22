@@ -3,11 +3,8 @@ import css from "./Contact.module.css";
 import emailjs from "emailjs-com";
 import { setTitle } from "../../../shared/utils/SetTitle";
 
-interface EmailData {
-  user_name: string;
-  user_email: string;
-  message: string;
-}
+// Use Record<string, string> to make the object flexible for EmailJS
+type EmailData = Record<string, string>;
 
 const service_key = import.meta.env.VITE_EMAIL_JS_SERVICE_KEY;
 const template_key = import.meta.env.VITE_EMAIL_JS_TEMPLATE_KEY;
