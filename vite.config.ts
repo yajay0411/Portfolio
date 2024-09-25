@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ["@mikecousins/react-pdf", "pdfjs-dist"],
   },
+  build: {
+    target: ["esnext"], // esnext supports top-level await
+  },
 });
