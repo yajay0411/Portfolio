@@ -62,64 +62,66 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className={css["contact-container"]}>
-      <h1 className={css["heading"]}>Contact Us</h1>
-      <div className={css["contact-info"]}>
-        <p>Fill out the form below to get in touch.</p>
-        <div className={css["social-media"]}>
-          <a
-            href="https://www.linkedin.com/in/ajay-yadav-63365b241/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/yajay0411"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github
-          </a>
+    <>
+      <div className={css["contact-container"]}>
+        <h1>Let's Connect</h1>
+        <div className={css["contact-info"]}>
+          <p>Fill out the form below to get in touch.</p>
+          <div className={css["social-media"]}>
+            <a
+              href="https://www.linkedin.com/in/ajay-yadav-63365b241/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/yajay0411"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Github
+            </a>
+          </div>
         </div>
+
+        <form onSubmit={handleSubmit} className={css["contact-form"]}>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            required
+          />
+
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            required
+          />
+
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            rows={5}
+            required
+          />
+          <button type="submit">Send Message</button>
+        </form>
       </div>
-
-      <form onSubmit={handleSubmit} className={css["contact-form"]}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your Name"
-          required
-        />
-
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          required
-        />
-
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Your Message"
-          rows={5}
-          required
-        />
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+    </>
   );
 };
 

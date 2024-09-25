@@ -41,7 +41,9 @@
 
 .tagline {
   font-size: 30px;
-  color: #57cc3a;
+  color: #ff8800;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgb(255, 234, 43);
   height: 40px; /* To maintain space for the typewriter effect */
 }
 
@@ -137,7 +139,8 @@
 
   .tagline {
     font-size: 25px;
-    color: #57cc3a;
+    color: #ff8800;
+    text-shadow: 0 0 20px rgb(255, 234, 43);
     height: 40px; /* To maintain space for the typewriter effect */
   }
 

@@ -1,8 +1,8 @@
 .pageContent {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -21,19 +21,21 @@
 }
 
 .card {
-  background: linear-gradient(135deg, #8200fc, #a54cf8);
   color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(107, 107, 107, 0.2);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 
 .cardImg {
   width: 100%;
-  height: 200px;
-  transition: all 1s ease-in-out;
+  height: 250px;
+  transition: all 0.5s ease-in-out;
 }
 
 .cardImg:hover {
@@ -41,23 +43,37 @@
 }
 
 .cardContent {
-  padding: 15px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .cardLinks {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .cardLinks a {
   color: #ff8800;
+  border: 1px solid #ff8800;
+  border-radius: 10px;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
 }
 
 .cardLinks a:hover {
-  color: #0056b3;
+  color: #000000;
+  font-size: 17px;
+  text-shadow: black;
+  background-color: #ff8800;
 }
 
 .cardLinks i {

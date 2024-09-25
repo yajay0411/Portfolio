@@ -63,7 +63,11 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         )}
         <div className={css["tags"]}>
           {skills.map((item) => {
-            return <span className={css["tag"]}> {item}</span>;
+            return (
+              <span key={`${item}_${Math.random()}`} className={css["tag"]}>
+                {item}
+              </span>
+            );
           })}
         </div>
       </div>

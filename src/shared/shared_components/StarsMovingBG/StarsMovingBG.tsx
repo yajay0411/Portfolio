@@ -4,13 +4,13 @@ import css from "./StarsMovingBG.module.css";
 const StarsMovingBG: React.FC = () => {
   const starContainerRef = useRef<HTMLDivElement>(null);
 
-  const shootingStar = 10;
+  const shootingStar = 5;
 
   // Generating stars dynamically
   useEffect(() => {
     const starContainer = starContainerRef.current;
     if (starContainer) {
-      const stars = 100; // Number of stars
+      const stars = 50; // Number of stars
 
       for (let i = 0; i < stars; i++) {
         const star = document.createElement("div");

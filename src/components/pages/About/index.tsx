@@ -5,6 +5,7 @@ import css from "./About.module.css";
 import KnowMeTab from "./TabsContentSection/KnowMeTab/KnowMeTab";
 import ExperienceTab from "./TabsContentSection/ExperienceTab/ExperienceTab";
 import TechStackTab from "./TabsContentSection/TechStackTab/TechStackTab";
+import PdfTab from "./TabsContentSection/PdfTab/PdfTab";
 // import ToolIUse from "./TabsContentSection/ToolsIUse/ToolIUse";
 
 const About: React.FC = () => {
@@ -13,6 +14,7 @@ const About: React.FC = () => {
 
   const experiences = [
     {
+      id: 1,
       position: "Junior Web Developer",
       company: "Krios Info Solutions Pvt.Ltd.",
       period: "May 2024 - Present · 5 mos",
@@ -37,6 +39,7 @@ const About: React.FC = () => {
       logo: "krios_logo", // Replace with actual logo URL
     },
     {
+      id: 2,
       position: "Junior Web Developer",
       company: "Immenso Tech Pvt. Ltd.",
       period: "Jun 2023 - May 2024 · 1 yr",
@@ -54,6 +57,7 @@ and we worked accordingly to provide client what he/she wants.`,
       logo: "immenso_logo", // Replace with actual logo URL
     },
     {
+      id: 3,
       position: "Software Developer",
       company: "Sriyaan Technologies Pvt Ltd",
       period: "Jun 2022 - May 2023 · 1 yr",
@@ -98,7 +102,7 @@ Created test cases for modules, changed verbiage in code, etc.`,
             onClick={() => setActiveTab("know_me")}
             className={activeTab === "know_me" ? css["active"] : ""}
           >
-            About Me
+            Know Me
           </button>
           <button
             onClick={() => setActiveTab("experience")}
@@ -110,7 +114,13 @@ Created test cases for modules, changed verbiage in code, etc.`,
             onClick={() => setActiveTab("tech")}
             className={activeTab === "tech" ? css["active"] : ""}
           >
-            Tech Stack
+            Tech Skills
+          </button>
+          <button
+            onClick={() => setActiveTab("resume_pdf")}
+            className={activeTab === "resume_pdf" ? css["active"] : ""}
+          >
+            Resume
           </button>
           {/* <button
             onClick={() => setActiveTab("tools")}
@@ -137,6 +147,11 @@ Created test cases for modules, changed verbiage in code, etc.`,
           {activeTab === "tech" && (
             <section>
               <TechStackTab techStack={techStack} />
+            </section>
+          )}
+          {activeTab === "resume_pdf" && (
+            <section>
+              <PdfTab />
             </section>
           )}
         </div>

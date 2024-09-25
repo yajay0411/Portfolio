@@ -57,7 +57,7 @@ const Projects = () => {
     <>
       <div className={css.pageContent}>
         {/* Display paginated items */}
-        <h1 className={css.heading}>My Recent Work</h1>
+        <h1>My Recent Work</h1>
         <div className={css.cardGrid}>
           {paginatedItems.map((item) => (
             <ProjectCard key={item.id} {...item} />

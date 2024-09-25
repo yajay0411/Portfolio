@@ -3,6 +3,7 @@ import ExperienceCard from "./ExperienceCard";
 // import css from "./ExperienceTab.module.css";
 
 interface Experience {
+  id: number;
   position: string;
   company: string;
   period: string;
@@ -22,8 +23,8 @@ const ExperienceTab: React.FC<ExperienceProps> = ({ experiences }) => {
   return (
     <>
       <h1>Experience</h1>
-      {experiences.map((exp, index) => (
-        <ExperienceCard key={index} {...exp} />
+      {experiences.map((exp) => (
+        <ExperienceCard key={exp.id} {...exp} />
       ))}
     </>
   );
