@@ -20,46 +20,46 @@
 
 @keyframes twinkle {
   0% {
-    transform: translateX(-100vw) translateY(0);
+    transform: translateX(-10vw);
     opacity: 0.8;
-    box-shadow: 0 0 16px rgba(238, 255, 0, 0.8);
+    box-shadow: 2px 2px 20px rgb(238, 255, 0);
   }
   20% {
-    opacity: 0.2;
-    box-shadow: 0 0 4px rgba(17, 0, 255, 0.8);
+    opacity: 0.6;
+    box-shadow: 2px 2px 20px rgba(0, 204, 255, 0.8);
   }
   30% {
-    opacity: 0.6;
-    box-shadow: 0 0 12px rgba(255, 145, 0, 0.6);
+    opacity: 0.4;
+    box-shadow: 2px 2px 20px rgb(255, 115, 0);
   }
   40% {
-    opacity: 0.2;
-    box-shadow: 0 0 4px rgba(247, 159, 159, 0.8);
+    opacity: 0.8;
+    box-shadow: 2px 2px 20px rgb(9, 255, 0);
   }
   50% {
-    opacity: 0.5;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    opacity: 0.6;
+    box-shadow: 2px 2px 20px rgb(132, 0, 255);
   }
   60% {
-    opacity: 0.8;
-    box-shadow: 0 0 16px rgba(255, 0, 0, 0.8);
+    opacity: 0.4;
+    box-shadow: 2px 2px 20px rgba(255, 0, 0, 0.8);
   }
   70% {
-    opacity: 0.2;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    opacity: 0.6;
+    box-shadow: 2px 2px 20px rgb(255, 255, 255);
   }
   80% {
-    opacity: 0.9;
-    box-shadow: 0 0 18px rgba(0, 110, 255, 0.9);
+    opacity: 0.8;
+    box-shadow: 2px 2px 20px rgb(0, 110, 255);
   }
   90% {
-    opacity: 0.5;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    opacity: 0.6;
+    box-shadow: 2px 2px 20px rgb(255, 255, 255);
   }
   100% {
-    transform: translateX(100vw) translateY(100vh);
+    transform: translateX(100vw);
     opacity: 0.8;
-    box-shadow: 0 0 16px rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 2px 20px rgb(255, 0, 0);
   }
 }
 
