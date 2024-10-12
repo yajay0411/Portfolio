@@ -1,8 +1,15 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
 .heroSection {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
 }
 
 .mainOne {
@@ -106,12 +113,19 @@
 
 /* Media query for smaller screens (tablets and phones) */
 @media (max-width: 768px) {
+  .homeContainer {
+    flex-direction: column-reverse;
+  }
   .heroSection {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     color: #fff;
+  }
+
+  .helloSubSection {
+    width: 80vw;
   }
 
   .hieHand {
@@ -145,11 +159,10 @@
   .roleLine {
     width: 350px;
     font-size: 25px;
-    height: 40px; /* To maintain space for the typewriter effect */
   }
 
   .tagline {
-    font-size: 25px;
+    font-size: 35px;
     color: #ff8800;
     text-shadow: 0 0 20px rgb(255, 234, 43);
     height: 40px; /* To maintain space for the typewriter effect */

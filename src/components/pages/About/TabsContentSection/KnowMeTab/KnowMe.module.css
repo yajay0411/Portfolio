@@ -1,0 +1,25 @@
+.aboutme p {
+  font-size: 22px !important;
+}
+
+.thoughtLine {
+  text-align: center;
+  font-size: 30px;
+  animation: thoughtLineAnimation 2s ease-in-out infinite;
+}
+
+@keyframes thoughtLineAnimation {
+  0% {
+    opacity: 1;
+    transform: translateX(5px) rotate(1deg);
+  }
+  50% {
+    opacity: 0.8;
+
+    transform: translateX(5px) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(5px) rotate(1deg);
+  }
+}

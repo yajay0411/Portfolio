@@ -48,10 +48,22 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
           className={css["company-logo"]}
         />
         <div className={css["experience-info"]}>
-          <p>{`Position : ${position}`}</p>
-          <p>{`Company Name : ${company} ( ${type} )`}</p>
-          <p>{`Duration : ${period}`}</p>
-          <p>{`Location : ${location}`}</p>
+          <p>
+            <span className={css.header}>Position :</span>
+            {` ${position}`}
+          </p>
+          <p>
+            <span className={css.header}>Company Name :</span>
+            {` ${company} ( ${type} )`}
+          </p>
+          <p>
+            <span className={css.header}>Duration :</span>
+            {` ${period}`}
+          </p>
+          <p>
+            <span className={css.header}>Location :</span>
+            {` ${location}`}
+          </p>
         </div>
       </div>
       <div className={css["experience-body"]}>

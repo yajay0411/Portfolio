@@ -52,43 +52,49 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="pageWrapper">
-        <div className={css.heroSection}>
-          <div className={css.mainOne}>
-            {/* Name */}
-            <div className={`${css.helloSection} ${css.helloSectionOne}`}>
-              Hi There! <span className={css.hieHand}>👋🏻</span>
+        <div className={css.homeContainer}>
+          <div className={css.heroSection}>
+            <div className={css.mainOne}>
+              {/* Name */}
+              <div className={`${css.helloSection} ${css.helloSectionOne}`}>
+                Hi There! <span className={css.hieHand}>👋🏻</span>
+              </div>
+
+              {/* Typewriter Effect for Dynamic Tagline */}
+              <div className={css.helloSubSection}>
+                {`I am `}
+                <span className={css.nameColor}>Ajay Yadav</span>
+                {`, a developer driven by integrity, hard work, and a passion for delivering high-quality code. I believe that the best solutions come from a blend of dedication and thoughtful problem-solving, and I approach each project with a commitment to honesty and precision.`}
+              </div>
             </div>
 
-            {/* Typewriter Effect for Dynamic Tagline */}
-            <div className={css.helloSubSection}>
-              {`I am `}
-              <span className={css.nameColor}>Ajay Yadav</span>
-              {`, a developer driven by integrity, hard work, and a passion for delivering high-quality code. I believe that the best solutions come from a blend of dedication and thoughtful problem-solving, and I approach each project with a commitment to honesty and precision.`}
+            <div className={css.mainTwo}>
+              {/* Reference the image using the ref */}
+              <img
+                className={css.image}
+                src={Ajay}
+                alt="Ajay's Image"
+                ref={imageRef}
+              />
             </div>
           </div>
-
-          <div className={css.mainTwo}>
-            {/* Reference the image using the ref */}
-            <img
-              className={css.image}
-              src={Ajay}
-              alt="Ajay's Image"
-              ref={imageRef}
-            />
+          <div className={css.roleLine}>
+            <span className={css.tagline}>
+              <Typewriter
+                words={[
+                  "React Developer",
+                  "Angular Developer",
+                  "Node Developer",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
           </div>
-        </div>
-        <div className={css.roleLine}>
-          <span className={css.tagline}>
-            <Typewriter
-              words={["React Developer", "Angular Developer", "Node Developer"]}
-              loop={true}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </span>
         </div>
       </div>
     </>

@@ -22,7 +22,7 @@ interface ExperienceProps {
 const ExperienceTab: React.FC<ExperienceProps> = ({ experiences }) => {
   return (
     <>
-      <h1>Experience</h1>
+      <h1>My Experience</h1>
       {experiences.map((exp) => (
         <ExperienceCard key={exp.id} {...exp} />
       ))}

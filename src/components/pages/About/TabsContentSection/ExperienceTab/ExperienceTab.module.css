@@ -4,9 +4,9 @@
   flex-direction: column;
   border-radius: 8px;
   padding: 16px;
-  margin: 10px 10px 10px 0px;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #ff6600, #a94dff);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 1);
+  /* background: linear-gradient(135deg, #ff6600, #a94dff); */
 }
 
 .experience-header {
@@ -22,8 +22,18 @@
   margin: 16px 16px 16px 0px;
 }
 
+.experience-info p {
+  font-size: 20px !important;
+}
+
+.experience-info p .header {
+  font-size: 22px !important;
+  color: #ff6600;
+  font-weight: bold;
+}
+
 .experience-body pre {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .tags {
@@ -68,14 +78,12 @@
 /* turncate text css */
 
 .toggle-btn {
-  background: white;
-  border-radius: 5px;
-  border: none;
-  color: #007bff;
+  color: #ff6600;
   cursor: pointer;
   margin-left: 5px;
-  padding: 10px;
   font-size: 15px;
+  background: none;
+  border: none;
 }
 
 .toggle-btn:hover {
@@ -86,11 +94,7 @@
   .experience-card {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 10px 10px 10px 0px;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, #ff6600, #a94dff);
+    padding: 0px;
   }
 
   .experience-header {
@@ -136,16 +140,18 @@
   }
 
   .toggle-btn {
-    background: white;
-    border-radius: 5px;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
+    color: #ff6600;
     padding: 5px;
     font-size: 15px;
   }
 
-  .toggle-btn:hover {
-    color: #80b8f5;
+  .experience-info p {
+    font-size: 18px !important;
+  }
+
+  .experience-info p .header {
+    font-size: 18px !important;
+    color: #ff6600;
+    font-weight: bold;
   }
 }
