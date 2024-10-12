@@ -7,17 +7,23 @@ import hooBank from "../../../assets/hooBank.png";
 
 interface ProjectCardProps {
   id: number;
+  index: number;
   name: string;
   image: string;
   github: string;
   demo: string;
+  position?: string;
+  setActiveCard: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
+  index,
   name,
   image,
   github,
   demo,
+  position,
+  setActiveCard,
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const imageObj: any = {
@@ -25,9 +31,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     stackoverflow,
     hooBank,
   };
-
   return (
-    <div className={css["card"]}>
+    <div
+      onClick={() => {
+        setActiveCard(index);
+      }}
+      className={`${css["card"]} ${
+        position === "activeCard"
+          ? css.activeCard
+          : position === "prevCard"
+          ? css.prevCard
+          : css.nextCard
+      }`}
+    >
       <img src={imageObj[image]} alt={name} className={css["cardImg"]} />
       <div className={css["cardContent"]}>
         <h3>{name}</h3>

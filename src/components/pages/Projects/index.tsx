@@ -5,8 +5,7 @@ import { useState } from "react";
 
 const Projects = () => {
   setTitle("Projects");
-  const itemsPerPage = 2;
-  const [currentPage, setCurrentPage] = useState(1);
+  const [activeCard, setActiveCard] = useState(0);
 
   const items = [
     {
@@ -32,56 +31,54 @@ const Projects = () => {
     },
   ];
 
-  // Calculate start and end indices of the current page
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-
-  // Slice the items array to get the items for the current page
-  const paginatedItems = items.slice(startIndex, endIndex);
-
-  // Calculate the total number of pages
-  const totalPages = Math.ceil(items.length / itemsPerPage);
-
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setActiveCard(Number(e.target.value));
   };
 
-  const previousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
   return (
     <>
-      <div className={css.pageContent}>
+      <div className="pageWrapper">
         {/* Display paginated items */}
-        <h1>My Recent Work</h1>
-        <div className={css.cardGrid}>
-          {paginatedItems.map((item) => (
-            <ProjectCard key={item.id} {...item} />
-          ))}
-        </div>
-        {/* Pagination Controls */}
-        <div className={css["pagination-controls"]}>
-          <button
-            onClick={previousPage}
-            disabled={items.length >= itemsPerPage && currentPage === 1}
+        <div className={css.pageContent}>
+          <h1>My Recent Work</h1>
+          <select
+            id={css.projectSelect}
+            value={activeCard}
+            onChange={handleSelectChange}
           >
-            Previous
-          </button>
-          <span>
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={nextPage}
-            disabled={
-              items.length >= itemsPerPage && currentPage === totalPages
-            }
-          >
-            Next
-          </button>
+            {items.map((item, index) => (
+              <option key={item.id} value={index} className={css.option}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+          <div className={css.cardGrid}>
+            {items.map((item, index: number) => {
+              let position: string = "";
+              // Set position for the active card, previous card, and next card
+              if (activeCard === index) {
+                position = "activeCard"; // Current active card
+              } else if (
+                activeCard ===
+                (index - 1 + items.length) % items.length
+              ) {
+                position = "prevCard"; // Previous card
+              } else if (activeCard === (index + 1) % items.length) {
+                position = "nextCard"; // Next card
+              } else {
+                position = "inactiveCard"; // Inactive cards
+              }
+              return (
+                <ProjectCard
+                  key={item.id}
+                  position={position}
+                  index={index}
+                  {...item}
+                  setActiveCard={setActiveCard}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

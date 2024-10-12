@@ -68,6 +68,7 @@
 
   .navbarWrapper .navbarMenuIcon {
     display: inline-block;
+    color: #ff8800 !important;
   }
 
   .navbarMenuWrapper {
