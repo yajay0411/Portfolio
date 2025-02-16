@@ -1,14 +1,12 @@
-import { setTitle } from "../../../shared/utils/SetTitle";
-
 import React, { useState } from "react";
 import css from "./About.module.css";
 import KnowMeTab from "./TabsContentSection/KnowMeTab/KnowMeTab";
 import ExperienceTab from "./TabsContentSection/ExperienceTab/ExperienceTab";
 import TechStackTab from "./TabsContentSection/TechStackTab/TechStackTab";
+import { SEO } from "../../../shared/shared_components";
 // import ToolIUse from "./TabsContentSection/ToolsIUse/ToolIUse";
 
 const About: React.FC = () => {
-  setTitle("about");
   const [activeTab, setActiveTab] = useState("know_me");
 
   const experiences = [
@@ -93,69 +91,76 @@ Created test cases for modules, changed verbiage in code, etc.`,
 
   // const toolIUse = ["VS Code", "Postman"];
   return (
-    <div className={css["about-container"]}>
-      <div className={css["tabs"]}>
-        {/* tab button section */}
-        <div className={css["tab-list"]}>
-          <button
-            onClick={() => setActiveTab("know_me")}
-            className={activeTab === "know_me" ? css["active"] : ""}
-          >
-            Know Me
-          </button>
-          <button
-            onClick={() => setActiveTab("experience")}
-            className={activeTab === "experience" ? css["active"] : ""}
-          >
-            Experience
-          </button>
-          <button
-            onClick={() => setActiveTab("tech")}
-            className={activeTab === "tech" ? css["active"] : ""}
-          >
-            Tech Skills
-          </button>
-          <button
-            onClick={() => setActiveTab("resume_pdf")}
-            className={activeTab === "resume_pdf" ? css["active"] : ""}
-          >
-            Resume
-          </button>
-          {/* <button
+    <>
+      <SEO
+        title="Ajay Yadav | About"
+        description="Welcome to our about page."
+        url="https://portfolio-yajay04112000.vercel.app/about"
+      />
+      <div className={css["about-container"]}>
+        <div className={css["tabs"]}>
+          {/* tab button section */}
+          <div className={css["tab-list"]}>
+            <button
+              onClick={() => setActiveTab("know_me")}
+              className={activeTab === "know_me" ? css["active"] : ""}
+            >
+              Know Me
+            </button>
+            <button
+              onClick={() => setActiveTab("experience")}
+              className={activeTab === "experience" ? css["active"] : ""}
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => setActiveTab("tech")}
+              className={activeTab === "tech" ? css["active"] : ""}
+            >
+              Tech Skills
+            </button>
+            <button
+              onClick={() => setActiveTab("resume_pdf")}
+              className={activeTab === "resume_pdf" ? css["active"] : ""}
+            >
+              Resume
+            </button>
+            {/* <button
             onClick={() => setActiveTab("tools")}
             className={activeTab === "tools" ? css["active"] : ""}
           >
             Tools I Use
           </button> */}
-        </div>
+          </div>
 
-        {/* tab content section */}
-        <div className={css["tab-content"]}>
-          {activeTab === "know_me" && (
-            <section>
-              <KnowMeTab />
-            </section>
-          )}
+          {/* tab content section */}
+          <div className={css["tab-content"]}>
+            {activeTab === "know_me" && (
+              <section>
+                <KnowMeTab />
+              </section>
+            )}
 
-          {activeTab === "experience" && (
-            <section>
-              <ExperienceTab experiences={experiences} />
-            </section>
-          )}
+            {activeTab === "experience" && (
+              <section>
+                <ExperienceTab experiences={experiences} />
+              </section>
+            )}
 
-          {activeTab === "tech" && (
-            <section>
-              <TechStackTab techStack={techStack} />
-            </section>
-          )}
-        </div>
-        {/* {activeTab === "tools" && (
+            {activeTab === "tech" && (
+              <section>
+                <TechStackTab techStack={techStack} />
+              </section>
+            )}
+          </div>
+          {/* {activeTab === "tools" && (
             <section>
               <ToolIUse toolIUse={toolIUse} />
             </section>
           )} */}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

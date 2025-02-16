@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import css from "./Home.module.css"; // Assume custom styles are in this file
 import Ajay from "../../../assets/Ajay.png";
-import { setTitle } from "../../../shared/utils/SetTitle";
+import { SEO } from "../../../shared/shared_components";
 
 const Home: React.FC = () => {
-  setTitle("Home");
 
   // Create a ref for the image element
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -51,6 +50,11 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <SEO
+        title="Ajay Yadav | Home"
+        description="Welcome to our home page."
+        url="https://portfolio-yajay04112000.vercel.app/"
+      />
       <div className="pageWrapper">
         <div className={css.homeContainer}>
           <div className={css.heroSection}>

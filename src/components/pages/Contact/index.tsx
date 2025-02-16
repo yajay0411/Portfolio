@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./Contact.module.css";
 import emailjs from "emailjs-com";
-import { setTitle } from "../../../shared/utils/SetTitle";
+import { SEO } from "../../../shared/shared_components";
 
 // Use Record<string, string> to make the object flexible for EmailJS
 type EmailData = Record<string, string>;
@@ -11,7 +11,6 @@ const template_key = import.meta.env.VITE_EMAIL_JS_TEMPLATE_KEY;
 const public_key = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
 
 const ContactPage: React.FC = () => {
-  setTitle("contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,6 +62,11 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
+    <SEO
+        title="Ajay Yadav | Contact"
+        description="Welcome to our contact page."
+        url="https://portfolio-yajay04112000.vercel.app/contact"
+      />
       <div className={css["contact-container"]}>
         <h1>Let's Connect</h1>
         <div className={css["contact-info"]}>

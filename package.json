@@ -20,6 +20,7 @@
     "portfolio": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.26.2",
     "react-simple-typewriter": "^5.0.1"
   },
