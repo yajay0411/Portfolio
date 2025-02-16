@@ -5,7 +5,6 @@ import css from "./About.module.css";
 import KnowMeTab from "./TabsContentSection/KnowMeTab/KnowMeTab";
 import ExperienceTab from "./TabsContentSection/ExperienceTab/ExperienceTab";
 import TechStackTab from "./TabsContentSection/TechStackTab/TechStackTab";
-import PdfTab from "./TabsContentSection/PdfTab/PdfTab";
 // import ToolIUse from "./TabsContentSection/ToolsIUse/ToolIUse";
 
 const About: React.FC = () => {
@@ -147,11 +146,6 @@ Created test cases for modules, changed verbiage in code, etc.`,
           {activeTab === "tech" && (
             <section>
               <TechStackTab techStack={techStack} />
-            </section>
-          )}
-          {activeTab === "resume_pdf" && (
-            <section>
-              <PdfTab />
             </section>
           )}
         </div>

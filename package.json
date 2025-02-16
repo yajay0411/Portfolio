@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,7 +17,6 @@
     "@mui/material": "^6.1.0",
     "dotenv": "^16.4.5",
     "emailjs-com": "^3.2.0",
-    "pdfjs-dist": "^4.2.67",
     "portfolio": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
