@@ -1,6 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { About, Contact, Home, Layout, Projects } from "./components";
 import { StarsMovingBG } from "./shared/shared_components";
+import { routes } from "./routes";
+
+// Create a mapping of component names to components
+const componentMapping: { [key: string]: React.ComponentType } = {
+  Home,
+  About,
+  Projects,
+  Contact,
+};
 
 function App() {
   return (
@@ -8,10 +17,17 @@ function App() {
       <StarsMovingBG />
       <Routes>
         <Route element={<Layout />}>
-          <Route index element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="projects" element={<Projects />}></Route>
-          <Route path="contact" element={<Contact />}></Route>
+          {routes.map((route, index) => {
+            const Component = componentMapping[route.element];
+            return (
+              <Route
+                key={index}
+                path={route.path ? route.path : "/"}
+                element={<Component />}
+                index={route.index}
+              />
+            );
+          })}
         </Route>
       </Routes>
     </>

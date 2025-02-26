@@ -3,7 +3,7 @@ import css from "./Projects.module.css";
 import ProjectCard from "./ProjectCard";
 import { useState } from "react";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   setTitle("Projects");
   const [activeCard, setActiveCard] = useState(0);
 
