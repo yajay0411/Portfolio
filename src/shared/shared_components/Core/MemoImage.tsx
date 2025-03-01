@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { useMemo  } from "react";
 
 interface ImageProps {
   src: string;
@@ -6,20 +6,9 @@ interface ImageProps {
   className?: string;
 }
 
-const MemoImage = memo(
-  React.forwardRef<HTMLImageElement, ImageProps>(({ src, alt, className }, ref) => {
-    return <img src={src} alt={alt} className={className} ref={ref} loading="lazy"/>;
-  })
-);
+const MemoImage = React.forwardRef<HTMLImageElement, ImageProps>(({ src, alt, className }, ref) => {
+  const memoizedImage = useMemo(() => src, [src]);
+  return <img src={memoizedImage} alt={alt} className={className} ref={ref} loading="lazy"/>;
+});
 
 export default MemoImage;
-
-// const MemoImage = React.forwardRef<HTMLImageElement, ImageProps>(({ src, alt, className }, ref) => {
-//   return <img src={src} alt={alt} className={className} ref={ref} />;
-// });
-
-// const areEqual = (prevProps: ImageProps, nextProps: ImageProps) => {
-//   return prevProps.src === nextProps.src && prevProps.alt === nextProps.alt;
-// };
-
-// export default React.memo(MemoImage, areEqual);

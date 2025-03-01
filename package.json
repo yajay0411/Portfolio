@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
+    "serve:build": "serve -s dist",
     "lint": "eslint .",
     "generate-sitemap:local": "cross-env NODE_ENV=local tsx scripts/generateSitemap.ts",
     "generate-sitemap:prod": "cross-env NODE_ENV=prod tsx scripts/generateSitemap.ts",
