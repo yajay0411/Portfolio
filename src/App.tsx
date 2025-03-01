@@ -2,16 +2,21 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { StarsMovingBG } from "./shared/shared_components";
 import { routes } from "./routes";
-import { lazyLoad } from "./shared/utils/lazyLoad";
-
 
 const Layout = React.lazy(() => import("./components/Layout/Layout"));
+const Home = React.lazy(() => import("./components/pages/Home"));
+const About = React.lazy(() => import("./components/pages/About"));
+const Projects = React.lazy(() => import("./components/pages/Projects"));
+const Contact = React.lazy(() => import("./components/pages/Contact"));
+
 // Lazy load the components
-const componentMapping: { [key: string]: React.LazyExoticComponent<React.ComponentType<any>> } = {
-  Home:lazyLoad("Home"),
-  About:lazyLoad("About"),
-  Projects:lazyLoad("Projects"),
-  Contact: lazyLoad("Contact"),
+const componentMapping: {
+  [key: string]: React.LazyExoticComponent<React.ComponentType<any>>;
+} = {
+  Home,
+  About,
+  Projects,
+  Contact,
 };
 
 function App() {
