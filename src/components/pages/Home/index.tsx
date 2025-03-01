@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import css from "./Home.module.css"; // Assume custom styles are in this file
-import Ajay from "../../../assets/Ajay.png";
-import { SEO } from "../../../shared/shared_components";
+import { MemoImage, SEO } from "../../../shared/shared_components";
 
 const Home: React.FC = () => {
 
@@ -74,12 +73,10 @@ const Home: React.FC = () => {
 
             <div className={css.mainTwo}>
               {/* Reference the image using the ref */}
-              <img
-                className={css.image}
-                src={Ajay}
+              <MemoImage  className={css.image}
+                src={`/assets/ajay.png`}
                 alt="Ajay's Image"
-                ref={imageRef}
-              />
+                ref={imageRef} /> 
             </div>
           </div>
           <div className={css.roleLine}>

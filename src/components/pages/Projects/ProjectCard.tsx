@@ -1,9 +1,7 @@
 // ProjectCard.tsx
 import React from "react";
 import css from "./Projects.module.css";
-import image_gallery from "../../../assets/image_gallery.png";
-import stackoverflow from "../../../assets/stackoverflow.png";
-import hooBank from "../../../assets/hooBank.png";
+import MemoImage from "../../../shared/shared_components/Core/MemoImage";
 
 interface ProjectCardProps {
   id: number;
@@ -27,9 +25,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const imageObj: any = {
-    image_gallery,
-    stackoverflow,
-    hooBank,
+    image_gallery: `/assets/image_gallery.png`,
+    stackoverflow: `/assets/stackoverflow.png`,
+    hooBank : `/assets/hooBank.png`,
   };
   return (
     <div
@@ -44,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           : css.nextCard
       }`}
     >
-      <img src={imageObj[image]} alt={name} className={css["cardImg"]} />
+      <MemoImage src={imageObj[image]} alt={name} className={css["cardImg"]} />
       <div className={css["cardContent"]}>
         <h3>{name}</h3>
         <div className={css.cardLinks}>

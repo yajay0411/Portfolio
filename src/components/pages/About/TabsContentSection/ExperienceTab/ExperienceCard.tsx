@@ -1,8 +1,5 @@
 import React from "react";
 import css from "./ExperienceTab.module.css";
-import immenso_logo from "../../../../../assets/immenso_logo.jpeg";
-import sriyaan_logo from "../../../../../assets/sriyaan_logo.jpeg";
-import krios_logo from "../../../../../assets/krios_logo.jpeg";
 import { useTruncateText } from "../../../../../shared/utils/TurncateText";
 
 interface ExperienceProps {
@@ -28,9 +25,9 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const logoObj: any = {
-    immenso_logo,
-    sriyaan_logo,
-    krios_logo,
+    immenso_logo : "/assets/immenso_logo.jpeg",
+    sriyaan_logo: "/assets/sriyaan_logo.jpeg",
+    krios_logo: "/assets/krios_logo.jpeg",
   };
 
   const {

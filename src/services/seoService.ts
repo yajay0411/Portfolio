@@ -1,4 +1,3 @@
-import ajayImage from "../assets/Ajay.png"
 export interface SEOProps {
   title?: string;
   description?: string;
@@ -27,7 +26,7 @@ I’m always open to exciting opportunities and collaborations. Feel free to rea
 `,
   keywords: "Angular, React, Node, Express",
   url: "https://portfolio-yajay04112000.vercel.app/",
-  image: ajayImage,
+  image: "/assets/ajay.png",
   twitterHandle: "@default",
   structuredData:{
     "@context": "https://schema.org",
